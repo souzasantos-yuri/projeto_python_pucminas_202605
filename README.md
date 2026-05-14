@@ -33,22 +33,20 @@ Este projeto tem como objetivo realizar:
 ```text
 .
 ├── data/
-│   ├── bronze/
-│   ├── silver/
-│   ├── gold/
+│   ├── raw/
 │   └── processed/
 │
 ├── notebooks/
 │   └── analise.ipynb
 │
 ├── src/
-│   ├── extract/
-│   ├── transform/
-│   ├── load/
-│   └── utils/
+│   ├── extract_data.py
+│   ├── transform_data.py
+│   └── load_data.py
 │
 ├── pyproject.toml
 ├── uv.lock
+├── main.py
 └── README.md
 ```
 
@@ -124,18 +122,12 @@ Isso irá instalar todas as dependências definidas no `pyproject.toml`.
 
 ---
 
-# 5. Executar o Jupyter Notebook
+# 5. Executar a main.py
 
 ```bash
-uv run jupyter notebook
+uv run python main.py
 ```
-
-ou
-
-```bash
-uv run jupyter lab
-```
-
+# 6. Executar o Jupyter Notebook
 ---
 
 # 📊 Principais Análises
@@ -152,7 +144,7 @@ O projeto contém análises sobre:
 
 # ✅ Boas Práticas Aplicadas
 
-- organização em camadas (`bronze/silver/gold`);
+- separação de raw e processed;
 - tratamento de dados;
 - validação de qualidade;
 - separação entre EDA e transformação;
